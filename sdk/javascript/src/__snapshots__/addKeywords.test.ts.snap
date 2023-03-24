@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addKeywords(ajv) sets http_method and http_path keywords in ajv passed 1`] = `
+[
+  {
+    "errors": false,
+    "keyword": "http_method",
+    "validate": [Function],
+  },
+]
+`;
+
+exports[`addKeywords(ajv) sets http_method and http_path keywords in ajv passed 2`] = `
+[
+  {
+    "errors": false,
+    "keyword": "http_path",
+    "validate": [Function],
+  },
+]
+`;
