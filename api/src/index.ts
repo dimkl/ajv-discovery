@@ -1,0 +1,1 @@
+export { DiscoveryApiFactory } from "./discoveryApiFactory";
