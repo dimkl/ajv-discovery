@@ -1,10 +1,15 @@
+import type Ajv from "ajv";
 import type { AnySchema } from "ajv";
 
-import Ajv from "ajv";
-
 type DataType = Record<string, unknown> | null | undefined;
-type DataAccessor = () => DataType;
-type DataSetter = (data: ReturnType<DataAccessor>) => void;
+type DataAccessor = () => DataType | Promise<DataType>;
+type DataSetter = (data: DataType) => void;
+
+type ValidateSchemaType = {
+  schema: AnySchema;
+  dataAccessor: DataAccessor;
+  dataSetter?: DataSetter;
+};
 
 export class DiscoveryApi {
   readonly ajv: Ajv;
@@ -16,7 +21,7 @@ export class DiscoveryApi {
   getSchemas() {
     const schemas = Object.keys(this.ajv.schemas)
       .filter((s) => s.startsWith("/schemas/"))
-      .map((s) => this.ajv.getSchema(s)?.schema);
+      .map((s) => this.ajv.getSchema(s)!.schema);
 
     return { schemas };
   }
@@ -26,12 +31,15 @@ export class DiscoveryApi {
     !silent && this.ajv.validateSchema(schema);
   }
 
-  async validateSchema(
-    schema: AnySchema,
-    dataAccessor: DataAccessor = () => null,
-    dataSetter: DataSetter = () => {}
-  ) {
+  async validateSchema({
+    schema,
+    dataAccessor,
+    dataSetter = async () => {},
+  }: ValidateSchemaType) {
     const validate = this.ajv.compile(schema);
-    dataSetter((await validate(dataAccessor())) as DataType);
+    const data = await dataAccessor();
+    if (await validate(data)) {
+      await dataSetter(data);
+    }
   }
 }

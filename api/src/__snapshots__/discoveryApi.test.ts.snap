@@ -1,5 +1,174 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: AnySchema[]} 1`] = `
+{
+  "schemas": [],
+}
+`;
+
+exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: AnySchema[]} 2`] = `
+{
+  "schemas": [
+    {
+      "$async": true,
+      "$id": "/schemas/customer.create",
+      "additionalProperties": false,
+      "default": {
+        "$async": true,
+        "$id": "/schemas/customer.create",
+        "additionalProperties": false,
+        "description": "Customer create schema",
+        "http_method": "POST",
+        "http_path": "/customers",
+        "properties": {
+          "email": {
+            "format": "email",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "first_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "last_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "password": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "email",
+          "password",
+        ],
+        "title": "Customer",
+        "type": "object",
+      },
+      "description": "Customer create schema",
+      "http_method": "POST",
+      "http_path": "/customers",
+      "properties": {
+        "email": {
+          "format": "email",
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "first_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "last_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "password": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email",
+        "password",
+      ],
+      "title": "Customer",
+      "type": "object",
+    },
+    {
+      "$async": true,
+      "$id": "/schemas/customer.update",
+      "additionalProperties": false,
+      "default": {
+        "$async": true,
+        "$id": "/schemas/customer.create",
+        "additionalProperties": false,
+        "description": "Customer create schema",
+        "http_method": "POST",
+        "http_path": "/customers",
+        "properties": {
+          "email": {
+            "format": "email",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "first_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "last_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "password": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "email",
+          "password",
+        ],
+        "title": "Customer",
+        "type": "object",
+      },
+      "description": "Customer create schema",
+      "http_method": "POST",
+      "http_path": "/customers",
+      "properties": {
+        "email": {
+          "format": "email",
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "first_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "last_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "password": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email",
+        "password",
+      ],
+      "title": "Customer",
+      "type": "object",
+    },
+  ],
+}
+`;
+
 exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnySchema[]} 1`] = `
 {
   "schemas": [],

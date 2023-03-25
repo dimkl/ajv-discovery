@@ -25,7 +25,10 @@ export class DiscoveryApiFactory {
   }
 
   static createAjv() {
-    const ajvInstance = new Ajv({ allErrors: true });
+    const ajvInstance = new Ajv({
+      allErrors: true,
+      removeAdditional: true,
+    });
 
     addKeywords(ajvInstance);
     addFormats(ajvInstance);
