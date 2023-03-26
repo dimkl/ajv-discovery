@@ -4,24 +4,25 @@ import addFormats from "ajv-formats";
 import { addKeywords } from "./addKeywords";
 import { DiscoveryApi } from "./discoveryApi";
 
-let cache: Record<string, Ajv> = {};
 const DEFAULT_KEY = "default";
 
 export class DiscoveryApiFactory {
+  static #cache: Record<string, Ajv> = {};
+
   static getInstance(key: string = DEFAULT_KEY, ajv?: Ajv) {
-    if (!cache[key]) {
-      cache[key] = ajv || this.createAjv();
+    if (!this.#cache[key]) {
+      this.#cache[key] = ajv || this.createAjv();
     }
 
-    if (ajv && ajv !== cache[key]) {
-      cache[key] = ajv;
+    if (ajv && ajv !== this.#cache[key]) {
+      this.#cache[key] = ajv;
     }
 
-    return new DiscoveryApi(cache[key]);
+    return new DiscoveryApi(this.#cache[key]);
   }
 
   static clear() {
-    cache = {};
+    this.#cache = {};
   }
 
   static createAjv() {
