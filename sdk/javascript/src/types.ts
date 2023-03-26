@@ -6,4 +6,4 @@ export type AjvDiscoverySchema = AnySchema & {
   $id: string
 };
 
-export type BaseParams = { apiUrl: string; jwt: string };
+export type BaseParams = { apiUrl: string; jwt?: string };

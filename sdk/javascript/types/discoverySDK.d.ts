@@ -7,9 +7,8 @@ type DiscoverySDKParams = BaseParams & {
 export declare class DiscoverySDK {
     #private;
     readonly apiUrl: string;
-    readonly jwt: string;
+    readonly jwt?: string;
     readonly ajv: Ajv;
     constructor({ schemas, apiUrl, jwt }: DiscoverySDKParams);
-    handler(schemaId: string, bodyOrParams: Record<string, unknown>, params?: Record<string, unknown>): Promise<any>;
 }
 export {};

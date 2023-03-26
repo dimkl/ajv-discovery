@@ -10,7 +10,7 @@ type DiscoverySDKParams = BaseParams & { schemas: AnySchema[] };
 
 export class DiscoverySDK {
   readonly apiUrl: string;
-  readonly jwt: string;
+  readonly jwt?: string;
   readonly ajv: Ajv;
 
   constructor({ schemas, apiUrl, jwt }: DiscoverySDKParams) {
@@ -21,20 +21,19 @@ export class DiscoverySDK {
     this.#setupApi(schemas);
   }
 
-  async handler(
+  async #handler(
     schemaId: string,
     bodyOrParams: Record<string, unknown>,
     params: Record<string, unknown> = {}
   ) {
-    const schema = this.ajv.getSchema(schemaId)?.schema;
+    const schema = this.ajv.getSchema(schemaId)?.schema as AjvDiscoverySchema;
     if (!schema) {
       throw new Error(
         `Schema ${schemaId} was not found in ajv instance provided!`
       );
     }
 
-    const { http_path: path, http_method: method } =
-      schema as AjvDiscoverySchema;
+    const { http_path: path, http_method: method } = schema;
 
     const validate = this.ajv.compile(schema);
     let data = await validate(bodyOrParams);
@@ -63,7 +62,7 @@ export class DiscoverySDK {
   #setupApi(schemas: AnySchema[]) {
     const api = createApi(schemas);
     Object.entries(api).map(([methodName, schemaId]) => {
-      Object.assign(this, { [methodName]: this.handler.bind(this, schemaId) });
+      Object.assign(this, { [methodName]: this.#handler.bind(this, schemaId) });
     });
   }
 

@@ -6,5 +6,5 @@ export type AjvDiscoverySchema = AnySchema & {
 };
 export type BaseParams = {
     apiUrl: string;
-    jwt: string;
+    jwt?: string;
 };
