@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Koa app API /discovery returns schemas 1`] = `
+{
+  "schemas": [
+    {
+      "$async": true,
+      "$id": "/schemas/customer.create",
+      "additionalProperties": false,
+      "default": {
+        "$async": true,
+        "$id": "/schemas/customer.create",
+        "additionalProperties": false,
+        "description": "Customer create schema",
+        "http_method": "POST",
+        "http_path": "/customers",
+        "properties": {
+          "email": {
+            "format": "email",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "first_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "last_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+          "password": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+          },
+        },
+        "required": [
+          "email",
+          "password",
+        ],
+        "title": "Customer",
+        "type": "object",
+      },
+      "description": "Customer create schema",
+      "http_method": "POST",
+      "http_path": "/customers",
+      "properties": {
+        "email": {
+          "format": "email",
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "first_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "last_name": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+        "password": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "email",
+        "password",
+      ],
+      "title": "Customer",
+      "type": "object",
+    },
+  ],
+}
+`;

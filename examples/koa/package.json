@@ -1,0 +1,37 @@
+{
+  "name": "examples-koa",
+  "version": "0.0.1",
+  "description": "Ajv discovery koa example",
+  "private": "true",
+  "scripts": {
+    "start": "npm run build && node dist/app.js",
+    "build": "tsup",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dimkl/ajv-discovery.git"
+  },
+  "author": "Dimitris Klouvas <dimitris.klouvas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimkl/ajv-discovery/issues"
+  },
+  "homepage": "https://github.com/dimkl/ajv-discovery#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/koa": "^2.13.5",
+    "@types/koa__router": "^12.0.0",
+    "@types/supertest": "^2.0.12",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@dimkl/ajv-discovery-api": "file:../../api",
+    "@dimkl/ajv-discovery-sdk": "file:../../sdk/javascript",
+    "@koa/router": "^12.0.0",
+    "koa": "^2.14.1"
+  }
+}
