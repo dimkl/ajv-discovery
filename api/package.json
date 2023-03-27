@@ -10,6 +10,7 @@
     "types/"
   ],
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsup",
     "test": "jest"
   },
