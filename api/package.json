@@ -1,6 +1,6 @@
 {
   "name": "@dimkl/ajv-discovery-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Setup Ajv discovery API for SDK",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
