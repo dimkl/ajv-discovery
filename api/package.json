@@ -23,7 +23,8 @@
     "sdk",
     "api",
     "validation",
-    "schema"
+    "schema",
+    "json-schema"
   ],
   "author": "Dimitris Klouvas <dimitris.klouvas@gmail.com>",
   "license": "MIT",
