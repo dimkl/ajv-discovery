@@ -29,8 +29,8 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@dimkl/ajv-discovery-api": "file:../../api",
-    "@dimkl/ajv-discovery-sdk": "file:../../sdk/javascript",
+    "@dimkl/ajv-discovery-api": "^0.1.0",
+    "@dimkl/ajv-discovery-sdk": "^0.1.0",
     "@koa/router": "^12.0.0",
     "koa": "^2.14.1"
   }
