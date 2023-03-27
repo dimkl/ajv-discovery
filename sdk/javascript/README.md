@@ -1,4 +1,4 @@
-# Events
+# Ajv Discovery SDK [JS]
 
 `@dimkl/ajv-discovery-sdk` is a JS SDK to provide api methods with validations using auto-discovery. This package is intented to be used with `@dimkl/ajv-discovery-api` or by providing json schemas.
 
