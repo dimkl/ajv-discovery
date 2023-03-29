@@ -29,6 +29,7 @@ export class DiscoveryApiFactory {
     const ajvInstance = new Ajv({
       allErrors: true,
       removeAdditional: true,
+      coerceTypes: true
     });
 
     addKeywords(ajvInstance);
