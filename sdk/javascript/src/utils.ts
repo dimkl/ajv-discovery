@@ -12,7 +12,7 @@ export function request(
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
   };
-  const mode: RequestMode = "no-cors";
+  const mode: RequestMode = "cors";
 
   const fetchOptions = { headers, mode, ...options };
 
