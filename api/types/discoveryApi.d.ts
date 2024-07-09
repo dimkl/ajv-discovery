@@ -1,12 +1,13 @@
 import type Ajv from "ajv";
 import type { AnySchema } from "ajv";
 type DataType = Record<string, unknown> | null | undefined;
-type DataAccessor = () => DataType | Promise<DataType>;
-type DataSetter = (data: DataType) => void;
+type DataAccessor<T = DataType | DataType[]> = () => T | Promise<T>;
+type DataSetter<T = DataType | DataType[]> = (data: T) => void;
 type ValidateSchemaType = {
     schema: AnySchema;
     dataAccessor: DataAccessor;
     dataSetter?: DataSetter;
+    allowBulkData?: boolean;
 };
 export declare class DiscoveryApi {
     readonly ajv: Ajv;
@@ -15,6 +16,6 @@ export declare class DiscoveryApi {
         schemas: AnySchema[];
     };
     registerSchema(schema: AnySchema, silent?: boolean): void;
-    validateSchema({ schema, dataAccessor, dataSetter, }: ValidateSchemaType): Promise<void>;
+    validateSchema({ schema, dataAccessor, dataSetter, allowBulkData }: ValidateSchemaType): Promise<void>;
 }
 export {};

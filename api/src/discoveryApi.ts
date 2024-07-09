@@ -2,13 +2,14 @@ import type Ajv from "ajv";
 import type { AnySchema } from "ajv";
 
 type DataType = Record<string, unknown> | null | undefined;
-type DataAccessor = () => DataType | Promise<DataType>;
-type DataSetter = (data: DataType) => void;
+type DataAccessor<T = DataType | DataType[]> = () => T | Promise<T>;
+type DataSetter<T = DataType | DataType[]> = (data: T) => void;
 
 type ValidateSchemaType = {
   schema: AnySchema;
   dataAccessor: DataAccessor;
   dataSetter?: DataSetter;
+  allowBulkData?: boolean;
 };
 
 export class DiscoveryApi {
@@ -35,11 +36,22 @@ export class DiscoveryApi {
     schema,
     dataAccessor,
     dataSetter = async () => {},
+    allowBulkData = true
   }: ValidateSchemaType) {
     const validate = this.ajv.compile(schema);
     const data = await dataAccessor();
-    if (await validate(data)) {
-      await dataSetter(data);
+    
+    if (!allowBulkData && Array.isArray(data)){
+      await validate(data);
+      return;
     }
+
+    let bulkData = Array.isArray(data) ? data : [data];
+    const res = await Promise.all(bulkData.map(d => validate(d)))
+    if(!res.every(Boolean)){
+      return;
+    }
+
+    await dataSetter(data);
   }
 }
