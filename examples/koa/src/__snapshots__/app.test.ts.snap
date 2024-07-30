@@ -12,8 +12,8 @@ exports[`Koa app API /discovery returns schemas 1`] = `
         "$id": "/schemas/customer.create",
         "additionalProperties": false,
         "description": "Customer create schema",
-        "http_method": "POST",
-        "http_path": "/customers",
+        "x-http-method": "POST",
+        "x-http-path": "/customers",
         "properties": {
           "email": {
             "format": "email",
@@ -45,8 +45,8 @@ exports[`Koa app API /discovery returns schemas 1`] = `
         "type": "object",
       },
       "description": "Customer create schema",
-      "http_method": "POST",
-      "http_path": "/customers",
+      "x-http-method": "POST",
+      "x-http-path": "/customers",
       "properties": {
         "email": {
           "format": "email",
