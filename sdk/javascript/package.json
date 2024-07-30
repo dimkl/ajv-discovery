@@ -1,6 +1,6 @@
 {
   "name": "@dimkl/ajv-discovery-sdk",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "Ajv discovery SDK",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
