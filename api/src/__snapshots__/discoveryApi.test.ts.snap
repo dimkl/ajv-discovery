@@ -18,8 +18,6 @@ exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: A
         "$id": "/schemas/customer.create",
         "additionalProperties": false,
         "description": "Customer create schema",
-        "http_method": "POST",
-        "http_path": "/customers",
         "properties": {
           "email": {
             "format": "email",
@@ -51,10 +49,10 @@ exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: A
         ],
         "title": "Customer",
         "type": "object",
+        "x-http-method": "POST",
+        "x-http-path": "/customers",
       },
       "description": "Customer create schema",
-      "http_method": "POST",
-      "http_path": "/customers",
       "properties": {
         "email": {
           "format": "email",
@@ -86,6 +84,8 @@ exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: A
       ],
       "title": "Customer",
       "type": "object",
+      "x-http-method": "POST",
+      "x-http-path": "/customers",
     },
     {
       "$async": true,
@@ -96,8 +96,6 @@ exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: A
         "$id": "/schemas/customer.create",
         "additionalProperties": false,
         "description": "Customer create schema",
-        "http_method": "POST",
-        "http_path": "/customers",
         "properties": {
           "email": {
             "format": "email",
@@ -129,10 +127,10 @@ exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: A
         ],
         "title": "Customer",
         "type": "object",
+        "x-http-method": "POST",
+        "x-http-path": "/customers",
       },
       "description": "Customer create schema",
-      "http_method": "POST",
-      "http_path": "/customers",
       "properties": {
         "email": {
           "format": "email",
@@ -164,6 +162,8 @@ exports[`DiscoveryApi getSchemas() returns all non /schemas.* ids as {schemas: A
       ],
       "title": "Customer",
       "type": "object",
+      "x-http-method": "POST",
+      "x-http-path": "/customers",
     },
   ],
 }
@@ -187,8 +187,6 @@ exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnyS
         "$id": "/schemas/customer.create",
         "additionalProperties": false,
         "description": "Customer create schema",
-        "http_method": "POST",
-        "http_path": "/customers",
         "properties": {
           "email": {
             "format": "email",
@@ -220,10 +218,10 @@ exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnyS
         ],
         "title": "Customer",
         "type": "object",
+        "x-http-method": "POST",
+        "x-http-path": "/customers",
       },
       "description": "Customer create schema",
-      "http_method": "POST",
-      "http_path": "/customers",
       "properties": {
         "email": {
           "format": "email",
@@ -255,6 +253,8 @@ exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnyS
       ],
       "title": "Customer",
       "type": "object",
+      "x-http-method": "POST",
+      "x-http-path": "/customers",
     },
     {
       "$async": true,
@@ -265,8 +265,6 @@ exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnyS
         "$id": "/schemas/customer.create",
         "additionalProperties": false,
         "description": "Customer create schema",
-        "http_method": "POST",
-        "http_path": "/customers",
         "properties": {
           "email": {
             "format": "email",
@@ -298,10 +296,10 @@ exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnyS
         ],
         "title": "Customer",
         "type": "object",
+        "x-http-method": "POST",
+        "x-http-path": "/customers",
       },
       "description": "Customer create schema",
-      "http_method": "POST",
-      "http_path": "/customers",
       "properties": {
         "email": {
           "format": "email",
@@ -333,6 +331,8 @@ exports[`DiscoveryApi getSchemas() returns all registered schemas {schemas: AnyS
       ],
       "title": "Customer",
       "type": "object",
+      "x-http-method": "POST",
+      "x-http-path": "/customers",
     },
   ],
 }
