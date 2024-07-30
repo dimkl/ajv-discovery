@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`addKeywords(ajv) sets http_method and http_path keywords in ajv passed 1`] = `
+exports[`addKeywords(ajv) sets x-http-method and x-http-path keywords in ajv passed 1`] = `
 [
   {
     "errors": false,
-    "keyword": "http_method",
+    "keyword": "x-http-method",
     "validate": [Function],
   },
 ]
 `;
 
-exports[`addKeywords(ajv) sets http_method and http_path keywords in ajv passed 2`] = `
+exports[`addKeywords(ajv) sets x-http-method and x-http-path keywords in ajv passed 2`] = `
 [
   {
     "errors": false,
-    "keyword": "http_path",
+    "keyword": "x-http-path",
     "validate": [Function],
   },
 ]
